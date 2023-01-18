@@ -9,18 +9,6 @@
           <header class="column__header"> {{column.title}}
             <button class="column__button column__button--close"  @click="deleteColumn(column.id)">x</button>
           </header>
-        <!-- <ul 
-          class="cards drop__zone" 
-          @drop="onDrop($event, column.id)"
-          @dragover.prevent  
-          @dragenter.prevent
-        >
-          <li  class="drag__el"  v-for="item in column.cards" :key="item.title" draggable  @dragstart="startDrag($event, item), drag($event, item)">
-            <h3> {{ item.title }}</h3>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            lobortis enim sit amet metus laoreet, ut condimentum
-          </li>
-        </ul> -->
 
          <draggable
             :columns="columns"
@@ -140,11 +128,7 @@ export default {
     draggingInfo() {
       return this.dragging ? "under drag" : "";
     }
-    
-    // listCards() {
-    //   return this.columns.columns.filter((card) => card.column_id === columnID)
-    // },
-  
+
   },
 
    methods: {
